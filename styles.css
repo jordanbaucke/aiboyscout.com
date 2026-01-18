@@ -20,10 +20,36 @@ header {
     margin-bottom: 40px;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 nav h1 {
     font-size: 1.8em;
     font-weight: 600;
     color: #222;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #0066cc;
+    text-decoration: underline;
 }
 
 main {
@@ -50,6 +76,48 @@ p {
     font-size: 1.1em;
 }
 
+.intro-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-image {
+    flex-shrink: 0;
+    width: 200px;
+    margin: 0;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.intro-image figcaption {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.intro-image .ai-note {
+    display: block;
+    font-size: 0.75em;
+    color: #999;
+    font-style: normal;
+    margin-top: 4px;
+}
+
 .hero {
     margin-bottom: 40px;
     text-align: center;
@@ -59,6 +127,28 @@ p {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
+}
+
+#library {
+    margin-top: 40px;
+}
+
+#library ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#library li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+}
+
+#library li:before {
+    content: "📚";
+    position: absolute;
+    left: 0;
 }
 
 #disclaimers {
@@ -106,7 +196,25 @@ footer {
         font-size: 1.5em;
     }
     
+    .nav-links {
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9em;
+    }
+    
     h2 {
         font-size: 1.3em;
+    }
+    
+    .intro-content {
+        flex-direction: column;
+    }
+    
+    .intro-image {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
     }
 }
