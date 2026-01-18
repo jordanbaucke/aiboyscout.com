@@ -50,6 +50,45 @@ p {
     font-size: 1.1em;
 }
 
+.hero {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+#disclaimers {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+#disclaimers h2 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+#disclaimers p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+#disclaimers a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+#disclaimers a:hover {
+    text-decoration: underline;
+}
+
 footer {
     border-top: 1px solid #e0e0e0;
     padding-top: 20px;
