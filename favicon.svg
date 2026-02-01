@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes type {
+        0% { opacity: 0; }
+        5% { opacity: 1; }
+        95% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      .cursor {
+        animation: blink 1s infinite;
+      }
+      .char1 { animation: type 2.5s infinite; animation-delay: 0s; }
+      .char2 { animation: type 2.5s infinite; animation-delay: 0.15s; }
+      .char3 { animation: type 2.5s infinite; animation-delay: 0.3s; }
+      .char4 { animation: type 2.5s infinite; animation-delay: 0.45s; }
+      .char5 { animation: type 2.5s infinite; animation-delay: 0.6s; }
+      .char6 { animation: type 2.5s infinite; animation-delay: 0.75s; }
+      .char7 { animation: type 2.5s infinite; animation-delay: 0.9s; }
+    </style>
+  </defs>
+  
+  <!-- Terminal window background -->
+  <rect x="10" y="20" width="80" height="60" rx="4" fill="#1e1e1e" stroke="#333" stroke-width="2"/>
+  
+  <!-- Terminal header bar -->
+  <rect x="10" y="20" width="80" height="8" rx="4" fill="#2d2d2d"/>
+  <circle cx="18" cy="24" r="1.5" fill="#ff5f56"/>
+  <circle cx="25" cy="24" r="1.5" fill="#ffbd2e"/>
+  <circle cx="32" cy="24" r="1.5" fill="#27c93f"/>
+  
+  <!-- Terminal prompt -->
+  <text x="15" y="45" font-family="monospace" font-size="8" fill="#00ff00">$</text>
+  
+  <!-- Typing animation - characters appear one by one -->
+  <text x="22" y="45" font-family="monospace" font-size="8" fill="#fff">
+    <tspan class="char1">n</tspan><tspan class="char2">p</tspan><tspan class="char3">m</tspan>
+    <tspan class="char4"> </tspan><tspan class="char5">r</tspan><tspan class="char6">u</tspan><tspan class="char7">n</tspan>
+  </text>
+  
+  <!-- Blinking cursor -->
+  <rect x="72" y="38" width="3" height="10" fill="#00ff00" class="cursor"/>
+</svg>

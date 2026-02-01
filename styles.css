@@ -14,16 +14,52 @@ body {
     padding: 20px;
 }
 
+a {
+    cursor: pointer;
+}
+
 header {
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 20px;
     margin-bottom: 40px;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 nav h1 {
     font-size: 1.8em;
     font-weight: 600;
     color: #222;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+.nav-links .social-icon {
+    width: 48px;
+    height: 48px;
+    display: block;
+    object-fit: contain;
 }
 
 main {
@@ -46,8 +82,169 @@ p {
     color: #555;
 }
 
+/* Fireworks canvas - only visible when hovering profile */
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    visibility: hidden;
+    transition: visibility 0s;
+}
+
+.fireworks.fireworks-visible {
+    visibility: visible;
+}
+
+/* Circular profile image - upper right corner, clickable link */
+.profile-wrap {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    display: block;
+    line-height: 0;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid #e0e0e0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.profile-wrap:hover .profile-image {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
 .intro {
     font-size: 1.1em;
+}
+
+.intro-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-image {
+    flex-shrink: 0;
+    width: 200px;
+    margin: 0;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.intro-image figcaption {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.intro-image .ai-note {
+    display: block;
+    font-size: 0.75em;
+    color: #999;
+    font-style: normal;
+    margin-top: 4px;
+}
+
+.hero {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+#library {
+    margin-top: 40px;
+}
+
+#library ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#library li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+}
+
+#library li:before {
+    content: "📚";
+    position: absolute;
+    left: 0;
+}
+
+#disclaimers {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+#disclaimers h2 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+#disclaimers p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+#disclaimers a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+#disclaimers a:hover {
+    text-decoration: underline;
+}
+
+footer .citation {
+    margin-top: 12px;
+    font-size: 0.8em;
+    color: #999;
+}
+
+footer .citation a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+footer .citation a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -63,11 +260,40 @@ footer {
         padding: 15px;
     }
     
+    .profile-wrap {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+    
     nav h1 {
         font-size: 1.5em;
     }
     
+    .nav-links {
+        gap: 16px;
+    }
+    
+    .nav-links .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
     h2 {
         font-size: 1.3em;
+    }
+    
+    .intro-content {
+        flex-direction: column;
+    }
+    
+    .intro-image {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
     }
 }
