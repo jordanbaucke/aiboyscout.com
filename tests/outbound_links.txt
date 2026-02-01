@@ -1,0 +1,29 @@
+Outbound Links Report
+================================================================================
+
+Generated: 2026-02-01T16:30:02
+Total unique external links: 7
+
+--------------------------------------------------------------------------------
+
+URL: https://codepen.io/juliangarnier/pen/gmOwJX
+Found on: index.html
+
+URL: https://jordanbaucke.com/
+Found on: index.html
+
+URL: https://www.instagram.com/aiboyscout/
+Found on: header.js
+
+URL: https://www.linkedin.com/newsletters/21st-century-digital-boy-scout-7403830207054290944/
+Found on: header.js
+
+URL: https://www.tiktok.com/@aiboyscout
+Found on: header.js
+
+URL: https://x.com/aiboyscout
+Found on: header.js
+
+URL: https://youtube.com/@aiboyscout?si=jpU5sadd3CJw35Xz
+Found on: header.js
+

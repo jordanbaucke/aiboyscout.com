@@ -1,0 +1,29 @@
+# Lychee configuration for aiboyscout.com
+# https://github.com/lycheeverse/lychee
+
+base_url = "https://aiboyscout.com"
+
+exclude_all_private = false
+exclude_private = false
+exclude_link_local = true
+include_mail = false
+
+timeout = 20
+max_retries = 3
+retry_wait_time = 1
+max_concurrency = 5
+
+user_agent = "Mozilla/5.0 (compatible; lychee-link-checker/1.0; +https://github.com/lycheeverse/lychee)"
+
+insecure = false
+verbose = "info"
+include_fragments = false
+
+accept = [
+  "200",
+  "301",
+  "302",
+  "303",
+  "307",
+  "308"
+]

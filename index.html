@@ -27,10 +27,16 @@
     <!-- Deployment trigger -->
 </head>
 <body>
+    <a href="https://jordanbaucke.com/" class="profile-wrap" id="profile-image" title="Jordan Baucke">
+        <img src="media/jordanbaucke-ai-boyscout.jpeg" alt="Jordan Baucke" class="profile-image" width="160" height="160">
+    </a>
+
     <header>
         <!-- Header will be injected by header.js -->
     </header>
     
+    <canvas class="fireworks" aria-hidden="true"></canvas>
+
     <main>
         <section class="intro">
             <h2>Welcome</h2>
@@ -39,7 +45,7 @@
         
         <section class="content">
             <h2>About</h2>
-            <p>The 21st Century Digital Boy Scout is dedicated to promoting responsible digital practices, ethical technology use, and thoughtful engagement with the digital world.</p>
+            <p>🤖 The 21st Century Digital Boy Scout is dedicated to promoting responsible digital practices ✨, ethical technology use 💻, and thoughtful engagement with the digital world 🌐.</p>
         </section>
         
         <section id="disclaimers">
@@ -55,7 +61,10 @@
     
     <footer>
         <p>&copy; 2026 - Jordan Baucke</p>
+        <p class="citation">Fireworks effect based on <a href="https://codepen.io/juliangarnier/pen/gmOwJX" target="_blank" rel="noopener noreferrer">Julian Garnier's CodePen</a>.</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="header.js"></script>
+    <script src="fireworks.js"></script>
 </body>
 </html>
