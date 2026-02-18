@@ -43,6 +43,13 @@ a {
     object-fit: contain;
 }
 
+.header-seal {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    background: transparent;
+}
+
 /* (removed new-design toggle styles) */
 
 main {
@@ -253,9 +260,13 @@ footer {
     font-size: 0.9em;
 }
 
-/* New design mode – color system using provided palette */
+/* New design mode – color system using provided palette
+   Light mode (default): light backgrounds, dark text
+   Dark mode (system prefers-color-scheme: dark): dark backgrounds, light text
+*/
 body.new-design {
-    /* Core palette
+    /* Base (light / “daytime”) palette */
+    /* Provided:
        #6E3AA8  Primary Purple
        #432063  Deep Purple
        #B37BE5  Light Purple
@@ -265,14 +276,14 @@ body.new-design {
        #3C78B5  Floor Blue
        #A04BD4  Secondary Accent
     */
-    --bg: #121212;
-    --bg-elevated: #1c1126;
-    --accent: #6E3AA8;
-    --accent-soft: rgba(110, 58, 168, 0.18);
-    --accent-alt: #9FE27D;
-    --text-main: #F2F2F2;
-    --text-muted: #B37BE5;
-    --border-subtle: rgba(242, 242, 242, 0.12);
+    --bg: #9FE27D;              /* Accent Green background */
+    --bg-elevated: #B37BE5;     /* Light Purple surfaces for text areas */
+    --accent: #6E3AA8;          /* Primary Purple for key accents */
+    --accent-soft: rgba(110, 58, 168, 0.14);
+    --accent-alt: #A04BD4;      /* Secondary Accent (purple), no blue */
+    --text-main: #000000;       /* Black text */
+    --text-muted: #432063;      /* Deep Purple for muted text */
+    --border-subtle: rgba(0, 0, 0, 0.08);
 
     background-color: var(--bg);
     color: var(--text-main);
@@ -280,14 +291,106 @@ body.new-design {
     padding: 32px 24px 40px;
 }
 
-body.new-design header {
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 16px;
-    margin-bottom: 32px;
+@media (prefers-color-scheme: dark) {
+    body.new-design {
+        /* Dark / “night” palette – your original dark theme */
+        --bg: #121212;
+        --bg-elevated: #1c1126;
+        --accent: #6E3AA8;
+        --accent-soft: rgba(110, 58, 168, 0.18);
+        --accent-alt: #9FE27D;
+        --text-main: #F2F2F2;
+        --text-muted: #B37BE5;
+        --border-subtle: rgba(242, 242, 242, 0.12);
+    }
 }
 
-body.new-design .site-nav h1,
-body.new-design .intro h2,
+body.new-design header {
+    min-height: 7rem;
+    height: auto;
+    background-color: var(--accent);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), 0 8px 48px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
+    padding: 0;
+}
+
+body.new-design .site-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 24px;
+}
+
+body.new-design .nav-header-row {
+    min-height: 3.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0.5rem 0;
+}
+
+body.new-design .header-seal {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: transparent;
+}
+
+body.new-design .nav-links {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+body.new-design .site-nav h1 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9FE27D;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    body.new-design header {
+        min-height: 6.5rem;
+    }
+    body.new-design .nav-header-row {
+        min-height: 3rem;
+    }
+    body.new-design .header-seal {
+        width: 200px;
+        height: 200px;
+    }
+    body.new-design .site-nav h1 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body.new-design header {
+        min-height: 6rem;
+    }
+    body.new-design .nav-header-row {
+        min-height: 2.75rem;
+    }
+    body.new-design .header-seal {
+        width: 160px;
+        height: 160px;
+    }
+    body.new-design .site-nav h1 {
+        font-size: 1.1rem;
+    }
+    body.new-design .site-nav {
+        padding: 0 16px;
+    }
+}
+
 body.new-design .content h2,
 body.new-design #disclaimers h2 {
     font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -296,6 +399,16 @@ body.new-design #disclaimers h2 {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--accent);
+}
+
+/* Make the Welcome heading use the muted color */
+body.new-design .intro h2 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 body.new-design .sxsw-callout h2 {
@@ -334,8 +447,8 @@ body.new-design .intro {
     padding: 32px 24px 28px;
     margin-bottom: 28px;
     border-radius: 0;
-    background: radial-gradient(circle at top left, rgba(255, 92, 0, 0.2), transparent 55%), var(--bg-elevated);
-    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-elevated);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 body.new-design .intro h2 {
@@ -353,10 +466,11 @@ body.new-design .intro p {
 
 body.new-design .content,
 body.new-design #disclaimers {
-    padding: 24px 24px 22px;
+    padding: 24px 24px 18px;
     border-radius: 0;
     background-color: var(--bg-elevated);
-    border: 1px solid var(--border-subtle);
+    border: 0;
+    border-top: 1px solid var(--border-subtle);
 }
 
 body.new-design .content {

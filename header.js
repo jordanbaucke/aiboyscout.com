@@ -6,7 +6,10 @@ function loadHeader() {
     // Build header navigation - large icons from MageCDN (free social icons CDN)
     header.innerHTML = `
         <nav class="site-nav">
-            <h1>21st Century Digital Boy Scout</h1>
+            <div class="nav-header-row">
+                <h1>21st Century Digital Boy Scout</h1>
+                <img src="media/aiboyscout-seal.png" alt="" class="header-seal" width="250" height="250">
+            </div>
             <div class="nav-links">
                 <a href="https://www.linkedin.com/newsletters/21st-century-digital-boy-scout-7403830207054290944/" target="_blank" rel="noopener noreferrer" title="LinkedIn Newsletter">
                     <img src="https://s.magecdn.com/social/tc-linkedin.svg" alt="LinkedIn" class="social-icon">
