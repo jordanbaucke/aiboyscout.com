@@ -12,6 +12,7 @@ function loadHeader() {
             </div>
             <div class="nav-bar">
                 <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
                     <li><a href="/blog/">Blog</a></li>
                 </ul>
                 <div class="nav-links">
