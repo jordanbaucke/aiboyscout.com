@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "21st Century Digital Boy Scout website",
   "scripts": {
-    "dev": "live-server --port=3000 --open=/index.html --watch=.",
-    "start": "npm run dev"
+    "dev": "live-server --port=8080 --open=/index.html",
+    "start": "live-server --port=8080 --open=/index.html"
   },
   "devDependencies": {
     "live-server": "^1.2.2"

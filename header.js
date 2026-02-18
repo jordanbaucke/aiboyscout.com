@@ -5,9 +5,17 @@ function loadHeader() {
 
     // Build header navigation - large icons from MageCDN (free social icons CDN)
     header.innerHTML = `
-        <nav>
-            <h1>21st Century Digital Boy Scout</h1>
-            <div class="nav-links">
+        <nav class="site-nav">
+            <div class="nav-header-row">
+                <h1>21st Century Digital Boy Scout</h1>
+                <img src="media/aiboyscout-seal.png" alt="" class="header-seal" width="250" height="250">
+            </div>
+            <div class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+                <div class="nav-links">
                 <a href="https://www.linkedin.com/newsletters/21st-century-digital-boy-scout-7403830207054290944/" target="_blank" rel="noopener noreferrer" title="LinkedIn Newsletter">
                     <img src="https://s.magecdn.com/social/tc-linkedin.svg" alt="LinkedIn" class="social-icon">
                 </a>
@@ -23,6 +31,7 @@ function loadHeader() {
                 <a href="https://www.instagram.com/aiboyscout/" target="_blank" rel="noopener noreferrer" title="Instagram">
                     <img src="https://s.magecdn.com/social/tc-instagram.svg" alt="Instagram" class="social-icon">
                 </a>
+                </div>
             </div>
         </nav>
     `;
