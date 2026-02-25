@@ -571,6 +571,47 @@ body.new-design footer .citation a {
     object-position: right center;
 }
 
+/* Blog post figure (e.g. Wikimedia image) */
+.blog-post .blog-figure {
+    margin: 1.5rem 0;
+}
+.blog-post .blog-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+.blog-post .blog-figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+.blog-post .blog-figure figcaption a {
+    color: var(--accent-alt);
+}
+
+/* Blog article horizontal rules (line breaks) */
+.blog-post hr,
+body.new-design .content hr {
+    border: 0;
+    height: 2px;
+    margin: 1.75rem 0;
+    background: linear-gradient(90deg, transparent, var(--accent) 15%, var(--accent) 85%, transparent);
+    opacity: 0.9;
+}
+body.new-design .content hr {
+    background: linear-gradient(90deg, transparent, var(--accent) 10%, var(--accent) 90%, transparent);
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+.post-list li { margin-bottom: 0.5rem; }
+.post-list a { color: var(--accent-alt); text-decoration: none; }
+.post-list a:hover { text-decoration: underline; }
+
 /* Blog: "also terminator" text */
 .blog-terminator {
     margin-top: 1.5rem;
