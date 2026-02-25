@@ -603,6 +603,18 @@ body.new-design .content hr {
     background: linear-gradient(90deg, transparent, var(--accent) 10%, var(--accent) 90%, transparent);
 }
 
+/* Main page: Spotify playlist embed */
+.spotify-section .spotify-embed-wrap {
+    margin-top: 0.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 600px;
+}
+.spotify-section .spotify-embed-wrap iframe {
+    display: block;
+    border: 0;
+}
+
 .post-list {
     list-style: none;
     padding: 0;
